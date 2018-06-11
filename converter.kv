@@ -1,0 +1,63 @@
+#:kivy 1.0
+
+<NumberInput>:
+# <NumberInput> ====== Input angka yang akan dimasukan
+# hint_text atau yang biasa disebut dengan placeholder pada HTML input
+# font_size dihitung dari pixel, contoh 12 berarti 12px pada CSS.
+# size_hint adalah property untuk mengatur ukuran widget berdasarkan persentase float (0-1)
+
+  hint_text: 'Masukan angka yang akan di konversi'
+  font_size: 18
+  size_hint_x: 1
+
+<NumberOption>:
+  cols: 4
+  size_hint_x: 1
+
+  BinOption:
+    group: 'option'
+    size_hint: .25, 1
+    text: 'Biner'
+  OctOption:
+    group: 'option'
+    size_hint: .25, 1
+    text: 'Oktal'
+  DecOption:
+    group: 'option'
+    size_hint: .25, 1
+    text: 'Desimal'
+  HexOption:
+    group: 'option'
+    size_hint: .25, 1
+    text: 'Hexa-Desimal'
+
+<ConvertResult>:
+  cols: 1
+
+<CalculatorConverter>:
+# Base Layout dari konverter yang akan dibuat
+  cols: 1
+
+  Label:
+    # font_size dihitung dari pixel, contoh 12 berarti 12px pada CSS.
+    # lalu ambil posisi tengah X berdasarkan ukuran layout dibagi 4
+    font_size: 27
+    text: '[color=5BC0BE][b]CodePolitan[/b][/color] [color=6FFFE9]Konverter Sederhana Kivy[/color]'
+    markup: True
+    size_hint: 1, .1
+
+  NumberInput:
+    size_hint_y: .2
+
+  NumberOption:
+    size_hint_y: .2
+
+  ConvertResult:
+    cols: 1
+    size_hint: 1, .5
+
+    Label:
+      font_size: 24
+      text: '[color=3A506B]Hasil dari Konversi = [/color]'
+      markup: True
+      size_hint: 1, .3
