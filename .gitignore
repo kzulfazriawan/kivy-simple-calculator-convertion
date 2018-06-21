@@ -105,3 +105,7 @@ venv.bak/
 
 # IDEA intellij
 .idea/
+
+#buildozer
+.buildozer/
+.bin/

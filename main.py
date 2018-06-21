@@ -1,42 +1,19 @@
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
-from kivy.uix.textinput import TextInput
-from kivy.uix.togglebutton import ToggleButton
-from kivy.uix.button import Button
-
-
-class NumberInput(TextInput):
-    pass
-
-
-class NumberOption(GridLayout):
-    pass
-
-
-# --------- TOGGLE OPTION START ---------------------
-class BinOption(ToggleButton):
-    pass
-
-
-class OctOption(ToggleButton):
-    pass
-
-
-class DecOption(ToggleButton):
-    pass
-
-
-class HexOption(ToggleButton):
-    pass
-
-
-# --------- TOGGLE OPTION END ---------------------
-class ConvertResult(GridLayout):
-    pass
+from kivy.properties import NumericProperty
 
 
 class CalculatorConverter(GridLayout):
-    pass
+    input_value    = NumericProperty
+    input_type     = NumericProperty
+
+    binnary_result = NumericProperty
+    octal_result   = NumericProperty
+    decimal_result = NumericProperty
+    hexa_result    = NumericProperty
+
+    def converting_from(self, *args):
+        pass
 
 
 class ConverterApp(App):
