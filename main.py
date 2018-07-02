@@ -4,6 +4,12 @@ from kivy.properties import NumericProperty
 
 
 class CalculatorConverter(GridLayout):
+    '''
+    CalculatorConverter
+    input type, kali ini input type menggunakan angka jadi
+    contohnya 1 adalah biner, 7 adalah oktal, dan 16 adalah hexa
+    dan selain itu adalah desimal
+    '''
     input_value    = NumericProperty
     input_type     = NumericProperty
 
@@ -13,7 +19,15 @@ class CalculatorConverter(GridLayout):
     hexa_result    = NumericProperty
 
     def converting_from(self, *args):
-        pass
+        if self.input_type == 1:
+            self.binnary_result = int(self.input_value, 2)
+
+        elif self.input_type == 7:
+            pass
+        elif self.input_type == 16:
+            pass
+        else:
+            pass
 
 
 class ConverterApp(App):
