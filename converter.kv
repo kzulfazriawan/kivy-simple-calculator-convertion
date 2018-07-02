@@ -1,13 +1,51 @@
 #:kivy 1.0
 
 <CalculatorConverter>:
-  input_type: 2
+  # Class layout utama yang udah dibuat didalam main.py
+  # buat jadi 1 kolom, jadi rownya bisa berderet
   cols: 1
 
+  Label:
+    size_hint: 1, .1
+    text: 'Tutorial CodePolitan Kivy'
+
   TextInput:
-    size_hint: 1, .2
+    # Input text yang dipake buat masukin angka yang bakal
+    # di konvert nanti.
+    # fungsi converting yang udah kita buat di class parent
+    # bakalan di trigger tiap kali kita mengetik angka diinput
+    size_hint: 1, .23
     on_text: root.converting(args[1])
 
-  Label:
-    size_hint: 1, .2
-    text: 'Biner'
+  GridLayout:
+    # Grid layout disini buat ngerapihin tombol tombol tipe konverter kita
+    # buat jadi 4 kolom untuk masing masing tombol.
+    cols: 4
+    size_hint: 1, .22
+
+    # pakai toggle button untuk toggling konverter,
+    # tiap ke state tombol ini bakal ngerubah tipe byte yang ada
+    # di class parent.
+    ToggleButton:
+      text: 'Bin'
+      group: 'cal_tog'
+      state: 'down'
+      on_state: root.input_type = 2
+      allow_no_selection: False
+
+    ToggleButton:
+      text: 'Oct'
+      group: 'cal_tog'
+      on_state: root.input_type = 8
+      allow_no_selection: False
+
+    ToggleButton:
+      text: 'Dec'
+      group: 'cal_tog'
+      on_state: root.input_type = 10
+      allow_no_selection: False
+
+    ToggleButton:
+      text: 'Hex'
+      group: 'cal_tog'
+      on_state: root.input_type = 16
