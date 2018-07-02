@@ -1,1 +1,13 @@
 #:kivy 1.0
+
+<CalculatorConverter>:
+  input_type: 2
+  cols: 1
+
+  TextInput:
+    size_hint: 1, .2
+    on_text: root.converting(args[1])
+
+  Label:
+    size_hint: 1, .2
+    text: 'Biner'
