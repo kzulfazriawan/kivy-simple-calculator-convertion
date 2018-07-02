@@ -15,13 +15,13 @@ class CalculatorConverter(GridLayout):
 
     # variable default dan input variable dari TextInput Kivy.
     input_type      = 2
-    input_value     = NumericProperty
+    input_value     = NumericProperty()
 
     # hasil output dari konverter, tetapi di deklarasi sebagai tipe String
-    binary_result  = StringProperty
-    octal_result   = StringProperty
-    decimal_result = StringProperty
-    hexa_result    = StringProperty
+    binary_result  = StringProperty()
+    octal_result   = StringProperty()
+    decimal_result = StringProperty()
+    hexa_result    = StringProperty()
 
     def converting(self, value):
         """
@@ -51,14 +51,6 @@ class CalculatorConverter(GridLayout):
                 self.binary_result  = '{:0b}'.format(d)
                 self.octal_result   = '{:0o}'.format(d)
                 self.hexa_result    = '{:0x}'.format(d)
-
-                # Dump result ke console
-                print("===============================================")
-                print("BINER   = %s" % self.binary_result)
-                print("DESIMAL = %s" % self.decimal_result)
-                print("OKTAL   = %s" % self.octal_result)
-                print("HEXA    = %s" % self.hexa_result)
-                print("===============================================")
 
 
 class ConverterApp(App):

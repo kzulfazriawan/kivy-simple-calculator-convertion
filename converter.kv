@@ -49,3 +49,22 @@
       text: 'Hex'
       group: 'cal_tog'
       on_state: root.input_type = 16
+
+  GridLayout:
+    # Hasil dari dump tadi kita buat 1 layout terakhir
+    # yang berisikan label label.
+    size_hint: 1, .45
+    cols: 1
+
+    Label:
+      text: '[size=24]BINER   = ' + str(root.binary_result) + '[/size]'
+      markup: True
+    Label:
+      text: '[size=24]DESIMAL = ' + str(root.decimal_result) + '[/size]'
+      markup: True
+    Label:
+      text: '[size=24]OKTAL   = ' + str(root.octal_result) + '[/size]'
+      markup: True
+    Label:
+      text: '[size=24]HEXA    = ' + str(root.hexa_result) + '[/size]'
+      markup: True
