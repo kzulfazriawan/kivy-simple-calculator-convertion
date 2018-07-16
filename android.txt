@@ -1,0 +1,3 @@
+title=Simple_Converter
+author=kzulfazriawan
+orientation=portrait
